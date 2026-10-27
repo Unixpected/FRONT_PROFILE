@@ -1,0 +1,41 @@
+{
+  "headline": "I build small, useful things",
+  "accent": "for the web.",
+  "intro": "Web tools, automation and systems work, made to save time and keep everyday tasks simple. Browse the websites I made below.",
+  "photo": "profile.jpg",
+  "email": "unixpected@proton.me",
+  "skills": [
+    {
+      "title": "Web development",
+      "text": "Fast, clean sites and internal portals built with PHP, JavaScript and plain HTML and CSS."
+    },
+    {
+      "title": "Automation",
+      "text": "Browser extensions and scripts that take repetitive jobs and make them one click."
+    },
+    {
+      "title": "Systems and networks",
+      "text": "Administration of Windows and Linux machines, remote tooling and day-to-day IT support."
+    }
+  ],
+  "projects": [
+    {
+      "title": "SkyPulse Weather",
+      "text": "A multi-provider weather app that installs on your phone and works like a native app.",
+      "url": "https://example.com",
+      "address": "skypulse.example.com",
+      "badge": "SP",
+      "tags": "JavaScript, PWA",
+      "image": ""
+    },
+    {
+      "title": "Free Chat",
+      "text": "A light, fast chat app for talking to an AI assistant, free to use in your browser.",
+      "url": "https://example.com",
+      "address": "chat.example.com",
+      "badge": "AI",
+      "tags": "HTML, JavaScript",
+      "image": ""
+    }
+  ]
+}

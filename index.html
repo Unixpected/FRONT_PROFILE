@@ -104,6 +104,7 @@
 
   footer { padding:40px 0 48px; color:var(--muted); font-size:.9rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
 
+  .shot { overflow:hidden; } .shot img { width:100%; height:100%; object-fit:cover; display:block; }
   @media (max-width:820px) {
     .hero { grid-template-columns:1fr; padding-top:48px; gap:44px; }
     .portrait { order:-1; width:min(280px,80%); }
@@ -130,8 +131,8 @@
 <main id="top">
   <div class="wrap hero">
     <div>
-      <h1>I build small, useful things <span>for the web.</span></h1>
-      <p>Web tools, automation and systems work, made to save time and keep everyday tasks simple. Browse the websites I made below.</p>
+      <h1 id="h1"></h1>
+      <p id="intro"></p>
       <div class="btns">
         <a class="btn main" href="#projects">See my websites</a>
         <a class="btn" href="#contact">Get in touch</a>
@@ -140,7 +141,7 @@
     <div class="portrait">
       <div class="frame">
         <!-- Save your picture next to this file as profile.jpg for best reliability -->
-        <img src="profile.jpg" alt="Portrait of unixpected" referrerpolicy="no-referrer"
+        <img id="photo" src="profile.jpg" alt="Portrait of unixpected" referrerpolicy="no-referrer"
              onerror="this.onerror=null;this.src='https://i.redd.it/oiv9dqepfbnb1.jpg'">
       </div>
     </div>
@@ -152,11 +153,7 @@
         <h2>What I do</h2>
         <p>Hands-on across the stack, from the browser to the network.</p>
       </div>
-      <div class="skills">
-        <div class="skill"><h3>Web development</h3><p>Fast, clean sites and internal portals built with PHP, JavaScript and plain HTML and CSS.</p></div>
-        <div class="skill"><h3>Automation</h3><p>Browser extensions and scripts that take repetitive jobs and make them one click.</p></div>
-        <div class="skill"><h3>Systems and networks</h3><p>Administration of Windows and Linux machines, remote tooling and day-to-day IT support.</p></div>
-      </div>
+      <div class="skills" id="skills"></div>
     </div>
   </section>
 
@@ -167,42 +164,7 @@
         <p>Select any card to open the live site.</p>
       </div>
 
-      <div class="grid">
-        <!-- ===== PROJECT CARD: copy this whole <a> block to add a site =====
-             1. href = your site link   2. <small> = text shown in the address bar
-             3. .shot = short letters or an emoji   4. h3 / p / tags = your details -->
-        <a class="site" href="http://skypulse.unixpected05.online" target="_blank" rel="noopener">
-          <div class="chrome"><i></i><i></i><i></i><small>skypulse.example.com</small></div>
-  
-          <div class="shot">
-            <img src="assets/skypulse-preview.png" alt="SkyPulse Weather App Preview">
-          </div>
-  
-          <div class="txt">
-            <h3>SkyPulse Weather</h3>
-            <p>A multi-provider weather app that installs on your phone and works like a native app.</p>
-          <div class="tags"><span>JavaScript</span><span>PWA</span></div>
-          </div>
-        </a>
-        <a class="site" href="https://example.com" target="_blank" rel="noopener">
-          <div class="chrome"><i></i><i></i><i></i><small>chat.example.com</small></div>
-          <div class="shot">AI</div>
-          <div class="txt">
-            <h3>Free Chat</h3>
-            <p>A light, fast chat app for talking to an AI assistant, free to use in your browser.</p>
-            <div class="tags"><span>HTML</span><span>JavaScript</span></div>
-          </div>
-        </a>
-
-        <div class="site soon">
-          <div class="chrome"><i></i><i></i><i></i><small>your-next-site.online</small></div>
-          <div class="shot">+</div>
-          <div class="txt">
-            <h3>More coming soon</h3>
-            <p>New websites are added here as I finish them.</p>
-          </div>
-        </div>
-      </div>
+      <div class="grid" id="grid"></div>
     </div>
   </section>
 
@@ -211,7 +173,7 @@
       <div class="contact">
         <h2>Have a question or an idea?</h2>
         <p>Tell me what you need and I will get back to you by email.</p>
-        <a class="mail" href="mailto:unixpected@proton.me">unixpected@proton.me</a>
+        <a class="mail" id="mail" href="#"></a>
       </div>
     </div>
   </section>
@@ -221,6 +183,74 @@
   <span>&copy; <span id="y"></span> unixpected</span>
   <a href="#top">Back to top</a>
 </footer>
-<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+<script id="fb" type="application/json">{
+  "headline": "I build small, useful things",
+  "accent": "for the web.",
+  "intro": "Web tools, automation and systems work, made to save time and keep everyday tasks simple. Browse the websites I made below.",
+  "photo": "profile.jpg",
+  "email": "unixpected@proton.me",
+  "skills": [
+    {
+      "title": "Web development",
+      "text": "Fast, clean sites and internal portals built with PHP, JavaScript and plain HTML and CSS."
+    },
+    {
+      "title": "Automation",
+      "text": "Browser extensions and scripts that take repetitive jobs and make them one click."
+    },
+    {
+      "title": "Systems and networks",
+      "text": "Administration of Windows and Linux machines, remote tooling and day-to-day IT support."
+    }
+  ],
+  "projects": [
+    {
+      "title": "SkyPulse Weather",
+      "text": "A multi-provider weather app that installs on your phone and works like a native app.",
+      "url": "https://example.com",
+      "address": "skypulse.example.com",
+      "badge": "SP",
+      "tags": "JavaScript, PWA",
+      "image": ""
+    },
+    {
+      "title": "Free Chat",
+      "text": "A light, fast chat app for talking to an AI assistant, free to use in your browser.",
+      "url": "https://example.com",
+      "address": "chat.example.com",
+      "badge": "AI",
+      "tags": "HTML, JavaScript",
+      "image": ""
+    }
+  ]
+}</script>
+<script>
+document.getElementById("y").textContent = new Date().getFullYear();
+// All page content lives in data.json (edit it in admin.html). The JSON above is a backup copy.
+function E(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
+function render(d) {
+  const h1 = document.getElementById("h1"); h1.textContent = d.headline + " ";
+  h1.appendChild(E("span", "", d.accent));
+  document.getElementById("intro").textContent = d.intro;
+  if (d.photo) document.getElementById("photo").src = d.photo;
+  const m = document.getElementById("mail"); m.href = "mailto:" + d.email; m.textContent = d.email;
+  const sk = document.getElementById("skills"); sk.textContent = "";
+  (d.skills || []).forEach(s => { const c = E("div", "skill"); c.append(E("h3", "", s.title), E("p", "", s.text)); sk.appendChild(c); });
+  const g = document.getElementById("grid"); g.textContent = "";
+  (d.projects || []).forEach(p => {
+    const c = E(p.url ? "a" : "div", p.url ? "site" : "site soon");
+    if (p.url) { c.href = p.url; c.target = "_blank"; c.rel = "noopener"; }
+    const ch = E("div", "chrome"); ch.append(E("i"), E("i"), E("i"), E("small", "", p.address || p.url || ""));
+    const sh = E("div", "shot");
+    if (p.image) { const im = E("img"); im.src = p.image; im.alt = p.title + " preview"; sh.appendChild(im); } else sh.textContent = p.badge || "";
+    const tx = E("div", "txt"); tx.append(E("h3", "", p.title), E("p", "", p.text));
+    const tg = E("div", "tags"); (p.tags || "").split(",").map(t => t.trim()).filter(Boolean).forEach(t => tg.appendChild(E("span", "", t)));
+    if (tg.children.length) tx.appendChild(tg);
+    c.append(ch, sh, tx); g.appendChild(c);
+  });
+}
+const backup = JSON.parse(document.getElementById("fb").textContent);
+fetch("data.json?v=" + Date.now()).then(r => r.ok ? r.json() : Promise.reject()).catch(() => backup).then(render);
+</script>
 </body>
 </html>
