@@ -22,20 +22,20 @@
     {
       "title": "SkyPulse Weather",
       "text": "A multi-provider weather app that installs on your phone and works like a native app.",
-      "url": "https://example.com",
-      "address": "skypulse.example.com",
+      "url": "http://skypulse.unixpected05.online/",
+      "address": "http://skypulse.unixpected05.online/",
       "badge": "SP",
-      "tags": "JavaScript, PWA",
-      "image": ""
+      "tags": "JavaScript, HTML, PWA",
+      "image": "images/site-1793097296546.jpg"
     },
     {
-      "title": "Free Chat",
-      "text": "A light, fast chat app for talking to an AI assistant, free to use in your browser.",
-      "url": "https://example.com",
-      "address": "chat.example.com",
-      "badge": "AI",
+      "title": "fileshare",
+      "text": "Send a file. It disappears in an hour.\nThats how easy it is.",
+      "url": "https://fileshare.unixpected05.online/",
+      "address": "https://fileshare.unixpected05.online/",
+      "badge": "FS",
       "tags": "HTML, JavaScript",
-      "image": ""
+      "image": "images/site-1793097217892.jpg"
     }
   ]
 }
