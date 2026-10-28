@@ -23,7 +23,7 @@
       "title": "SkyPulse Weather",
       "text": "A multi-provider weather app that installs on your phone and works like a native app.",
       "url": "http://skypulse.unixpected05.online/",
-      "address": "http://skypulse.unixpected05.online/",
+      "address": "https://skypulse.unixpected05.online/",
       "badge": "SP",
       "tags": "JavaScript, HTML, PWA",
       "image": "images/site-1793097296546.jpg"
